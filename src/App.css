@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin:0;
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background:var(--color-bg);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+a{
+  color: unset;
+  text-decoration: none;
+}
+
+.gradient__bg{
+    /* ff 3.6+ */
+    background:-moz-linear-gradient(167deg, rgba(32, 63, 104, 1) 0%, rgba(7, 7, 8, 1) 100%); 
+
+    /* safari 5.1+,chrome 10+ */
+    background:-webkit-linear-gradient(167deg, rgba(32, 63, 104, 1) 0%, rgba(7, 7, 8, 1) 100%);
+
+    /* opera 11.10+ */
+    background:-o-linear-gradient(167deg, rgba(32, 63, 104, 1) 0%, rgba(7, 7, 8, 1) 100%);
+
+    /* ie 6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#070708', endColorstr='#203F68', GradientType=1 );
+
+    /* ie 10+ */
+    background:-ms-linear-gradient(167deg, rgba(32, 63, 104, 1) 0%, rgba(7, 7, 8, 1) 100%);
+
+    /* global 94%+ browsers support */
+    background:linear-gradient(167deg, rgba(32, 63, 104, 1) 0%, rgba(7, 7, 8, 1) 100%);
+
+}
+
+.gradient__text{
+  background: var(--gradient-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section__padding{
+    padding:4rem 6rem;
+}
+
+.section__margin{
+  margin: 4rem 6rem;
+}
+
+
+.at-item {
+  animation-name: scale-up-center;
+  animation-duration: 0.90s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  /* shorthand 
+  animation: scale-up-center 1s ease 0s 1 normal none;
+  */ 
+}
+@keyframes scale-up-center {
+  0%{
+    transform: scale(.2);
+  }
+  100%{
+    transform: scale(1);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width:700px) {
+  .section__padding{
+    padding:4rem 6rem;
   }
-  to {
-    transform: rotate(360deg);
+  .section__margin{
+    margin:4rem
   }
+  
+}
+@media screen and (max-width:550px) {
+  .section__padding{
+    padding:4rem 2rem;
+  }
+  .section__margin{
+    margin:4rem 2rem;
+  }
+  
 }
